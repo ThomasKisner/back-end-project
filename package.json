@@ -6,6 +6,9 @@
     "knex": "^0.15.2",
     "sqlite3": "^4.0.3"
   },
+  "engines": {
+    "nodemon": "^1.18.5"
+  },
   "devDependencies": {
     "nodemon": "^1.18.5"
   },

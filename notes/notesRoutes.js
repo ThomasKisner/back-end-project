@@ -23,7 +23,7 @@ router.get("/notes/:id", (req, res) => {
     .then(note => {
       if (note.length >= 1) {
           console.log(note)
-        res.status(200).send(note);
+        res.status(200).json(note);
       } else {
         res.status(404).json({ error: "No note exists with that id" });
       }
@@ -36,7 +36,6 @@ router.get("/notes/:id", (req, res) => {
 //ADD NOTE TO NOTES
 router.post('/notes', (req, res)=> {
 const note = req.body;
-
 
 db.add(note)
 .then(response => {
@@ -63,7 +62,7 @@ router.delete('/notes/:id', (req,res)=> {
 })
 
 //UPDATE NOTE
-router.post('/notes/:id', (req, res) =>{
+router.put('/notes/:id', (req, res) =>{
     const {id} = req.params;
     const changes = req.body;
 
