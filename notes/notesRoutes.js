@@ -28,6 +28,10 @@ const checkJwt = jwt({
   algorithms: ["RS256"]
 });
 
+router.get('/', (req, res)=> {
+  res.send('Hi Mom')
+})
+
 //GETS ALL NOTES
 router.get("/notes", (req, res) => {
   db.find()
