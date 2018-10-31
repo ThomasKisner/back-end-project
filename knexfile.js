@@ -1,4 +1,12 @@
 // Update with your config settings.
+require('dotenv').config()
+const localPg = {
+  host: 'localhost',
+  database: 'notes',
+  user: process.env.DB_user,
+  password: process.env.DB_Pass,
+}
+const dbConnection = process.env.DATABASE_URL || localPg;
 
 module.exports = {
 
@@ -27,12 +35,8 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
+    client: 'pg',
+    connection:  dbConnection,
     pool: {
       min: 2,
       max: 10
