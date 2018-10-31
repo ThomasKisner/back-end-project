@@ -9,4 +9,5 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/", notesRoutes);
-server.listen(9000, () => console.log("\n Running on port 9000 \n"));
+const port = process.env.PORT || 9000;
+server.listen(port, () => console.log("\n Running on port 9000 \n"));
